@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[Marcos Lourinho]]></title>
+        <description><![CDATA[Marcos Lourinho's blog]]></description>
+        <link>https://maxleiter.com</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sat, 26 Sep 2026 07:00:00 GMT</lastBuildDate>
+        <atom:link href="https://maxleiter.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <language><![CDATA[en]]></language>
+        <item>
+            <title><![CDATA[Hello World!]]></title>
+            <description><![CDATA[<p>E aí, tudo bem?</p>
+<p>Depois de muito tempo adiando, finalmente esse deploy rolou.
+Esse site é um espaço pra compartilhar as experiências, decisões difíceis, os bastidores de quem
+lidera pessoas e produtos de tecnologia há mais de uma década, os erros que me ensinaram mais do que os
+acertos, além de ferramentas, scripts, conteúdos, livros, artigos e tudo o que
+me ajudou, de alguma forma, a trabalhar melhor.</p>
+<p>Não é sobre fórmula pronta nem discurso motivacional. É sobre construir,
+com responsabilidade, times e projetos que de fato geram valor — e sobre
+compartilhar esse processo sem filtro.</p>
+<p>Não tenho calendário fixo de publicação: as notas vão aparecer conforme
+algo valer a pena registrar. Se você chegou até aqui, seja bem-vindo(a).
+Espero que o que eu compartilhar por aqui também ajude você.</p>
+<p>Tamo junto!</p>
+<p>Marcos Lourinho.</p>]]></description>
+            <link>https://maxleiter.com/notes/hello-world</link>
+            <guid isPermaLink="false">https://maxleiter.com/notes/hello-world</guid>
+            <category><![CDATA[note]]></category>
+            <dc:creator><![CDATA[Marcos Lourinho]]></dc:creator>
+            <pubDate>Sat, 26 Sep 2026 07:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How we made v0 an effective coding agent]]></title>
+            <description><![CDATA[Learn how we built v0 to be an effective AI coding agent through careful system design and iteration.<br><br><a href="https://vercel.com/blog/how-we-made-v0-an-effective-coding-agent">Read on vercel.com</a>]]></description>
+            <link>https://vercel.com/blog/how-we-made-v0-an-effective-coding-agent</link>
+            <guid isPermaLink="false">https://vercel.com/blog/how-we-made-v0-an-effective-coding-agent</guid>
+            <category><![CDATA[post]]></category>
+            <dc:creator><![CDATA[vercel.com]]></dc:creator>
+            <pubDate>Wed, 07 Jan 2026 08:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Introducing the v0 composite model family]]></title>
+            <description><![CDATA[Introducing the v0 composite model family.<br><br><a href="https://vercel.com/blog/v0-composite-model-family">Read on vercel.com</a>]]></description>
+            <link>https://vercel.com/blog/v0-composite-model-family</link>
+            <guid isPermaLink="false">https://vercel.com/blog/v0-composite-model-family</guid>
+            <category><![CDATA[post]]></category>
+            <dc:creator><![CDATA[vercel.com]]></dc:creator>
+            <pubDate>Sun, 01 Jun 2025 07:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Introducing AI SDK 3.0 with Generative UI support]]></title>
+            <description><![CDATA[Stream React Components from LLMs to deliver richer user experiences.<br><br><a href="https://vercel.com/blog/ai-sdk-3-generative-ui">Read on vercel.com</a>]]></description>
+            <link>https://vercel.com/blog/ai-sdk-3-generative-ui</link>
+            <guid isPermaLink="false">https://vercel.com/blog/ai-sdk-3-generative-ui</guid>
+            <category><![CDATA[post]]></category>
+            <dc:creator><![CDATA[vercel.com]]></dc:creator>
+            <pubDate>Fri, 01 Mar 2024 08:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Introducing the Vercel AI SDK]]></title>
+            <description><![CDATA[An interoperable, streaming-enabled, edge-ready software development kit for AI apps built with React and Svelte.<br><br><a href="https://vercel.com/blog/introducing-the-vercel-ai-sdk">Read on vercel.com</a>]]></description>
+            <link>https://vercel.com/blog/introducing-the-vercel-ai-sdk</link>
+            <guid isPermaLink="false">https://vercel.com/blog/introducing-the-vercel-ai-sdk</guid>
+            <category><![CDATA[post]]></category>
+            <dc:creator><![CDATA[vercel.com]]></dc:creator>
+            <pubDate>Thu, 15 Jun 2023 07:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Improving the accessibility of our Next.js site]]></title>
+            <description><![CDATA[We've made some improvements to the accessibility of our Next.js site. Here's how we did it.<br><br><a href="https://vercel.com/blog/improving-the-accessibility-of-our-nextjs-site">Read on vercel.com</a>]]></description>
+            <link>https://vercel.com/blog/improving-the-accessibility-of-our-nextjs-site</link>
+            <guid isPermaLink="false">https://vercel.com/blog/improving-the-accessibility-of-our-nextjs-site</guid>
+            <category><![CDATA[post]]></category>
+            <dc:creator><![CDATA[vercel.com]]></dc:creator>
+            <pubDate>Fri, 30 Sep 2022 07:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[New edge dev infrastructure]]></title>
+            <description><![CDATA[New edge dev infrastructure.<br><br><a href="https://vercel.com/blog/new-edge-dev-infrastructure">Read on vercel.com</a>]]></description>
+            <link>https://vercel.com/blog/new-edge-dev-infrastructure</link>
+            <guid isPermaLink="false">https://vercel.com/blog/new-edge-dev-infrastructure</guid>
+            <category><![CDATA[post]]></category>
+            <dc:creator><![CDATA[vercel.com]]></dc:creator>
+            <pubDate>Tue, 21 Jul 2020 07:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
