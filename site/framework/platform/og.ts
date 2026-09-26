@@ -144,7 +144,7 @@ function card({ title, date, home }: Card): ReactElement {
     createElement(
       'span',
       { style: { ...chip, fontWeight: 700 } },
-      'maxleiter.com',
+      'marcoslourinho.com',
     ),
     date ? createElement('div', { style: chip }, date) : null,
   )

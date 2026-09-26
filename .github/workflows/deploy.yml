@@ -51,7 +51,7 @@ jobs:
         run: |
           set -euo pipefail
           shopt -s extglob dotglob
-          rm -rf -- !(site|legacy-site|.git|.github|README.md|.gitignore|.nojekyll)
+          rm -rf -- !(site|legacy-site|.git|.github|README.md|.gitignore|.nojekyll|CNAME)
           cp -a site/.vercel/output/static/. .
           touch .nojekyll
 

@@ -5,177 +5,177 @@
       "path": "/",
       "title": "Marcos Lourinho",
       "description": "A website by Marcos Lourinho.",
-      "canonical": "https://maxleiter.com",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
       "textHash": "f0b9de20affae2cd",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 42158
+      "partialBytes": 42188
     },
     {
       "path": "/404",
       "title": "404 | Marcos Lourinho",
       "description": "Page not found.",
-      "canonical": "https://maxleiter.com/404",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/404",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": true,
       "textHash": "4f3a5bee42efffab",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 5296
+      "partialBytes": 5326
     },
     {
       "path": "/about",
       "title": "About | Marcos Lourinho",
       "description": "Pega um café, porque aqui você vai ler a versão longa da história.",
-      "canonical": "https://maxleiter.com/about",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/about",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
       "textHash": "f23a5407ee5b71d1",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 13241
+      "partialBytes": 13271
     },
     {
       "path": "/about/embed",
       "title": "About | Marcos Lourinho",
       "description": "Pega um café, porque aqui você vai ler a versão longa da história.",
-      "canonical": "https://maxleiter.com/about",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/about",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": true,
       "textHash": "21d39db9929b4939",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 10100
+      "partialBytes": 10130
     },
     {
       "path": "/blogs",
       "title": "Blogs | Marcos Lourinho",
       "description": "Artigos que eu tenho certeza que vão te ajudar a ser melhor.",
-      "canonical": "https://maxleiter.com/blogs",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/blogs",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
       "textHash": "09e9435e14dc6e9f",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 14031
+      "partialBytes": 14061
     },
     {
       "path": "/blogs/embed",
       "title": "Blogs | Marcos Lourinho",
       "description": "Artigos que eu tenho certeza que vão te ajudar a ser melhor.",
-      "canonical": "https://maxleiter.com/blogs",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/blogs",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": true,
       "textHash": "1d4715206f3198ac",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 10890
+      "partialBytes": 10920
     },
     {
       "path": "/books",
       "title": "Books | Marcos Lourinho",
       "description": "Livros que me ensinaram muito e precisam ser recomendados",
-      "canonical": "https://maxleiter.com/books",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/books",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
       "textHash": "d1e7d4da9b6b6c19",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 20887
+      "partialBytes": 20917
     },
     {
       "path": "/books/embed",
       "title": "Books | Marcos Lourinho",
       "description": "Livros que me ensinaram muito e precisam ser recomendados",
-      "canonical": "https://maxleiter.com/books",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/books",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": true,
       "textHash": "e1449ea89343bd33",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 17746
+      "partialBytes": 17776
     },
     {
       "path": "/notes",
       "title": "Notes | Marcos Lourinho",
       "description": "Short-form thoughts, code snippets, and tips.",
-      "canonical": "https://maxleiter.com/notes",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/notes",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
       "textHash": "be6e847f748c47f4",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 6396
+      "partialBytes": 6426
     },
     {
       "path": "/notes/embed",
       "title": "Notes | Marcos Lourinho",
       "description": "Short-form thoughts, code snippets, and tips.",
-      "canonical": "https://maxleiter.com/notes",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/notes",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": true,
       "textHash": "eb3c75619ebbd693",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 3255
+      "partialBytes": 3285
     },
     {
       "path": "/notes/hello-world",
       "title": "Hello World! | Marcos Lourinho",
       "description": "Por que esse espaço existe e o que você pode esperar por aqui.",
-      "canonical": "https://maxleiter.com/notes/hello-world",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/notes/hello-world",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
       "textHash": "38ce011cf4ef58b6",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 8560
+      "partialBytes": 8595
     },
     {
       "path": "/notes/hello-world/embed",
       "title": "Hello World! | Marcos Lourinho",
       "description": "Por que esse espaço existe e o que você pode esperar por aqui.",
-      "canonical": "https://maxleiter.com/notes/hello-world",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/notes/hello-world",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": true,
       "textHash": "9f44b253a936b774",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 4860
+      "partialBytes": 4895
     },
     {
       "path": "/projects",
       "title": "Projects | Marcos Lourinho",
       "description": "Em breve...",
-      "canonical": "https://maxleiter.com/projects",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/projects",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
       "textHash": "dcc16ce19508ef6e",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 5360
+      "partialBytes": 5390
     },
     {
       "path": "/projects/embed",
       "title": "Projects | Marcos Lourinho",
       "description": "Em breve...",
-      "canonical": "https://maxleiter.com/projects",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/projects",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": true,
       "textHash": "ff437aa9848e5b76",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 2210
+      "partialBytes": 2240
     },
     {
       "path": "/videos",
       "title": "Videos | Marcos Lourinho",
       "description": "Vídeos que me ensinaram muito e precisam ser recomendados",
-      "canonical": "https://maxleiter.com/videos",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/videos",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
       "textHash": "c80580021692cd32",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 13413
+      "partialBytes": 13443
     },
     {
       "path": "/videos/embed",
       "title": "Videos | Marcos Lourinho",
       "description": "Vídeos que me ensinaram muito e precisam ser recomendados",
-      "canonical": "https://maxleiter.com/videos",
-      "ogImage": "https://maxleiter.com/opengraph-image.png",
+      "canonical": "https://marcoslourinho.com/videos",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": true,
       "textHash": "37171d84dcb933a6",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 10269
+      "partialBytes": 10299
     }
   ]
 }

@@ -51,7 +51,7 @@ export type Note = Base & {
 export type AssetManifest = Record<string, string>
 
 export interface Site {
-  url: 'https://maxleiter.com'
+  url: 'https://marcoslourinho.com'
   title: 'Marcos Lourinho'
   author: 'Marcos Lourinho'
 }

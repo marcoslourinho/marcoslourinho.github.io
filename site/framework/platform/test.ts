@@ -288,7 +288,7 @@ async function main(): Promise<void> {
   )
   check(`sitemap.xml has all ${TOP_LEVEL.length} top-level paths`, () => {
     for (const route of TOP_LEVEL) {
-      const loc = `https://maxleiter.com${route === '/' ? '' : route}`
+      const loc = `https://marcoslourinho.com${route === '/' ? '' : route}`
       assert.ok(sitemap.includes(`<loc>${loc}</loc>`), `missing ${route}`)
     }
   })
@@ -306,8 +306,8 @@ async function main(): Promise<void> {
   check('robots.txt allows all and points at the sitemap', () => {
     assert.equal(
       robots,
-      'User-Agent: *\nAllow: /\n\nHost: https://maxleiter.com\n' +
-        'Sitemap: https://maxleiter.com/sitemap.xml\n',
+      'User-Agent: *\nAllow: /\n\nHost: https://marcoslourinho.com\n' +
+        'Sitemap: https://marcoslourinho.com/sitemap.xml\n',
     )
   })
 
