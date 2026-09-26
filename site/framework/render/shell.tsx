@@ -13,7 +13,7 @@ import type { PageHead } from '../shared/types'
  * markup lands directly inside `<body>` with no wrapper element.
  */
 
-const SITE_NAME = "Marcos Lourinho's website"
+const SITE_NAME = 'Marcos Lourinho'
 const DEFAULT_TITLE = 'Marcos Lourinho'
 const OG_ALT = "Marcos Lourinho's site"
 
@@ -54,21 +54,65 @@ export interface Fonts {
 }
 
 /**
- * A post's structured data. Emitted with `id="jsonld"` so the router can swap
- * it, and with `<` escaped so post titles cannot close the script tag.
+ * The `Person` behind the site, so Google and AI answer engines have a
+ * structured, unambiguous identity to point at ("who is Marcos Lourinho")
+ * regardless of which page they crawled in on. Kept in sync with the bio on
+ * `/` and `/about` rather than introducing claims that live only here.
  */
-function jsonLdScript(head: PageHead): string {
-  if (head.ogType !== 'article') return ''
-  const data = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: head.title ?? DEFAULT_TITLE,
-    ...(head.description ? { description: head.description } : {}),
-    url: head.canonical,
-    ...(head.publishedTime ? { datePublished: head.publishedTime } : {}),
-    ...(head.ogImage ? { image: head.ogImage } : {}),
-    author: { '@type': 'Person', name: DEFAULT_TITLE },
+function personNode(siteUrl: string) {
+  return {
+    '@type': 'Person',
+    name: DEFAULT_TITLE,
+    url: siteUrl,
+    image: `${siteUrl}/profile.jpg`,
+    jobTitle: 'Head of Engineering',
+    description:
+      'Head of Engineering na Exitlag, com mais de uma década liderando ' +
+      'pessoas, produtos e times de engenharia de software.',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Exitlag',
+      url: 'https://exitlag.com',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'São Paulo',
+      addressRegion: 'SP',
+      addressCountry: 'BR',
+    },
+    sameAs: [
+      'https://www.linkedin.com/in/marcoslourinho/',
+      'https://github.com/marcoslourinho',
+      'https://x.com/marcoslourinho',
+      'https://www.instagram.com/marcos.lourinho',
+    ],
   }
+}
+
+/**
+ * Structured data. Emitted with `id="jsonld"` so the router can swap it, and
+ * with `<` escaped so post titles cannot close the script tag.
+ *
+ * The `Person` node is on every page — a crawler can land on any note or post
+ * first, not just `/` — and a post/note page adds a `BlogPosting` alongside it
+ * in the same `@graph` so the two ever ship as one script tag.
+ */
+function jsonLdScript(head: PageHead, siteUrl: string): string {
+  const graph: Record<string, unknown>[] = [personNode(siteUrl)]
+
+  if (head.ogType === 'article') {
+    graph.push({
+      '@type': 'BlogPosting',
+      headline: head.title ?? DEFAULT_TITLE,
+      ...(head.description ? { description: head.description } : {}),
+      url: head.canonical,
+      ...(head.publishedTime ? { datePublished: head.publishedTime } : {}),
+      ...(head.ogImage ? { image: head.ogImage } : {}),
+      author: { '@type': 'Person', name: DEFAULT_TITLE, url: siteUrl },
+    })
+  }
+
+  const data = { '@context': 'https://schema.org', '@graph': graph }
   const json = JSON.stringify(data).replace(/</g, '\\u003c')
   return `<script type="application/ld+json" id="jsonld">${json}</script>`
 }
@@ -173,7 +217,7 @@ function headTags(head: PageHead, siteUrl: string): ReactElement[] {
       : []),
     <meta property="og:url" content={head.canonical} key="og:url" />,
     <meta property="og:site_name" content={SITE_NAME} key="og:site_name" />,
-    <meta property="og:locale" content="en_US" key="og:locale" />,
+    <meta property="og:locale" content="pt_BR" key="og:locale" />,
     <meta property="og:image" content={ogImage} key="og:image" />,
     <meta property="og:image:type" content="image/png" key="og:image:type" />,
     <meta property="og:image:width" content="1200" key="og:image:width" />,
@@ -284,7 +328,7 @@ export function renderShell(options: ShellOptions): string {
   const headHtml = [
     renderToStaticMarkup(<>{headTags(head, siteUrl)}</>),
     `<meta name="shell-id" content="${options.shellId}">`,
-    jsonLdScript(head),
+    jsonLdScript(head, siteUrl),
     options.embed ? '<base target="_top">' : '',
     renderToStaticMarkup(<>{preloadTags(fonts.preload)}</>),
     (options.runtimePreload ?? [])
@@ -305,7 +349,7 @@ export function renderShell(options: ShellOptions): string {
 
   return (
     '<!doctype html>' +
-    '<html lang="en" data-theme="dark" style="color-scheme:dark">' +
+    '<html lang="pt-BR" data-theme="dark" style="color-scheme:dark">' +
     `<head>${headHtml}</head>` +
     `<body>${body}${scripts.join('')}</body>` +
     '</html>'
@@ -328,7 +372,7 @@ export function renderPartial(options: PartialOptions): string {
   const headHtml = renderToStaticMarkup(<>{headTags(head, siteUrl)}</>)
   return (
     `<!doctype html><html><head>${headHtml}` +
-    `<meta name="shell-id" content="${options.shellId}">${jsonLdScript(head)}` +
+    `<meta name="shell-id" content="${options.shellId}">${jsonLdScript(head, siteUrl)}` +
     `<style id="css-page">${css.page}</style></head>` +
     `<body>${body}${islandsScript(islands)}</body></html>`
   )

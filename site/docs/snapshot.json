@@ -4,13 +4,13 @@
     {
       "path": "/",
       "title": "Marcos Lourinho",
-      "description": "A website by Marcos Lourinho.",
+      "description": "Marcos Lourinho — Head of Engineering na Exitlag. Notas sobre engenharia de software, liderança e gestão de times de tecnologia.",
       "canonical": "https://marcoslourinho.com",
       "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
       "textHash": "f0b9de20affae2cd",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 42188
+      "partialBytes": 43237
     },
     {
       "path": "/404",
@@ -21,29 +21,29 @@
       "noindex": true,
       "textHash": "4f3a5bee42efffab",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 5326
+      "partialBytes": 6066
     },
     {
       "path": "/about",
       "title": "About | Marcos Lourinho",
-      "description": "Pega um café, porque aqui você vai ler a versão longa da história.",
+      "description": "A trajetória de Marcos Lourinho: mais de uma década liderando pessoas, produtos e times de engenharia de software. Pega um café, porque aqui você vai ler a versão longa da história.",
       "canonical": "https://marcoslourinho.com/about",
       "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
       "textHash": "f23a5407ee5b71d1",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 13271
+      "partialBytes": 14362
     },
     {
       "path": "/about/embed",
       "title": "About | Marcos Lourinho",
-      "description": "Pega um café, porque aqui você vai ler a versão longa da história.",
+      "description": "A trajetória de Marcos Lourinho: mais de uma década liderando pessoas, produtos e times de engenharia de software. Pega um café, porque aqui você vai ler a versão longa da história.",
       "canonical": "https://marcoslourinho.com/about",
       "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": true,
       "textHash": "21d39db9929b4939",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 10130
+      "partialBytes": 11221
     },
     {
       "path": "/blogs",
@@ -54,7 +54,7 @@
       "noindex": false,
       "textHash": "09e9435e14dc6e9f",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 14061
+      "partialBytes": 14801
     },
     {
       "path": "/blogs/embed",
@@ -65,7 +65,7 @@
       "noindex": true,
       "textHash": "1d4715206f3198ac",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 10920
+      "partialBytes": 11660
     },
     {
       "path": "/books",
@@ -76,7 +76,7 @@
       "noindex": false,
       "textHash": "d1e7d4da9b6b6c19",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 20917
+      "partialBytes": 21657
     },
     {
       "path": "/books/embed",
@@ -87,7 +87,7 @@
       "noindex": true,
       "textHash": "e1449ea89343bd33",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 17776
+      "partialBytes": 18516
     },
     {
       "path": "/notes",
@@ -96,9 +96,9 @@
       "canonical": "https://marcoslourinho.com/notes",
       "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
-      "textHash": "be6e847f748c47f4",
+      "textHash": "b516c86be01de6cb",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 6426
+      "partialBytes": 7055
     },
     {
       "path": "/notes/embed",
@@ -107,31 +107,31 @@
       "canonical": "https://marcoslourinho.com/notes",
       "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": true,
-      "textHash": "eb3c75619ebbd693",
+      "textHash": "2e173216755102a0",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 3285
+      "partialBytes": 3914
     },
     {
       "path": "/notes/hello-world",
       "title": "Hello World! | Marcos Lourinho",
-      "description": "Por que esse espaço existe e o que você pode esperar por aqui.",
+      "description": "Short-form thoughts, code snippets, and tips.",
       "canonical": "https://marcoslourinho.com/notes/hello-world",
       "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
-      "textHash": "38ce011cf4ef58b6",
+      "textHash": "609fbfe059fc6dcf",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 8595
+      "partialBytes": 9062
     },
     {
       "path": "/notes/hello-world/embed",
       "title": "Hello World! | Marcos Lourinho",
-      "description": "Por que esse espaço existe e o que você pode esperar por aqui.",
+      "description": "Short-form thoughts, code snippets, and tips.",
       "canonical": "https://marcoslourinho.com/notes/hello-world",
       "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": true,
-      "textHash": "9f44b253a936b774",
+      "textHash": "8db54a1d07a4afee",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 4895
+      "partialBytes": 5362
     },
     {
       "path": "/projects",
@@ -142,7 +142,7 @@
       "noindex": false,
       "textHash": "dcc16ce19508ef6e",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 5390
+      "partialBytes": 6130
     },
     {
       "path": "/projects/embed",
@@ -153,7 +153,7 @@
       "noindex": true,
       "textHash": "ff437aa9848e5b76",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 2240
+      "partialBytes": 2980
     },
     {
       "path": "/videos",
@@ -164,7 +164,7 @@
       "noindex": false,
       "textHash": "c80580021692cd32",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 13443
+      "partialBytes": 14183
     },
     {
       "path": "/videos/embed",
@@ -175,7 +175,7 @@
       "noindex": true,
       "textHash": "37171d84dcb933a6",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 10299
+      "partialBytes": 11039
     }
   ]
 }

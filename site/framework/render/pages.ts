@@ -91,7 +91,9 @@ export async function getPages(ctx: BuildContext): Promise<PageDef[]> {
     {
       path: '/',
       head: {
-        description: 'A website by Marcos Lourinho.',
+        description:
+          'Marcos Lourinho — Head of Engineering na Exitlag. Notas sobre ' +
+          'engenharia de software, liderança e gestão de times de tecnologia.',
       },
       render: () => createElement(HomePage, { posts: entries }),
     },
@@ -100,7 +102,9 @@ export async function getPages(ctx: BuildContext): Promise<PageDef[]> {
       head: {
         title: 'About',
         description:
-          'Pega um café, porque aqui você vai ler a versão longa da história.',
+          'A trajetória de Marcos Lourinho: mais de uma década liderando ' +
+          'pessoas, produtos e times de engenharia de software. Pega um ' +
+          'café, porque aqui você vai ler a versão longa da história.',
       },
       variants: { embed: true },
       render: ({ toolbar }) => createElement(AboutPage, { toolbar }),
