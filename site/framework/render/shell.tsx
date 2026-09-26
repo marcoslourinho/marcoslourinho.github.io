@@ -17,6 +17,25 @@ const SITE_NAME = 'Marcos Lourinho'
 const DEFAULT_TITLE = 'Marcos Lourinho'
 const OG_ALT = "Marcos Lourinho's site"
 
+/**
+ * GA4. The `config` call's automatic `page_view` covers the first, real page
+ * load. It does not cover what happens after: this is a same-document
+ * router, and GA has no way to notice a `pushState`. `navigate()` in
+ * framework/client/router.ts sends the `page_view` for every soft navigation
+ * once the URL and title it reads are already updated.
+ */
+const GA_MEASUREMENT_ID = 'G-M20VB9SPFN'
+
+function gaScript(): string {
+  return (
+    `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}"></script>` +
+    '<script>window.dataLayer=window.dataLayer||[];' +
+    'function gtag(){dataLayer.push(arguments)}' +
+    "gtag('js',new Date());" +
+    `gtag('config','${GA_MEASUREMENT_ID}');</script>`
+  )
+}
+
 /** The site card, relative to whichever site URL the build context carries. */
 const defaultOgImage = (siteUrl: string) => `${siteUrl}/opengraph-image.png`
 
@@ -345,7 +364,7 @@ export function renderShell(options: ShellOptions): string {
   const scripts: string[] = [islandsScript(islands)]
   const inlineRuntime = options.runtime.replace(/<\/script/gi, '<\\/script')
   scripts.push(`<script type="module">${inlineRuntime}</script>`)
-  scripts.push('<script defer src="/_vercel/insights/script.js"></script>')
+  scripts.push(gaScript())
 
   return (
     '<!doctype html>' +

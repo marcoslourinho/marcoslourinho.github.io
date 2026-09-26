@@ -14,6 +14,26 @@
 
 import { isNameLive, transitionNameForUrl } from '../shared/transitions'
 
+declare global {
+  interface Window {
+    /** Set by the inline snippet in framework/render/shell.tsx, if it ran. */
+    gtag?: (...args: unknown[]) => void
+  }
+}
+
+/**
+ * GA's own `page_view` only fires from the `config` call the shell inlines
+ * into the first, real page load. Everything after that is a soft
+ * navigation -- a `pushState` GA cannot see -- so `navigate()` below sends
+ * this once the swap has the new URL and title live.
+ */
+function trackPageView(): void {
+  window.gtag?.('event', 'page_view', {
+    page_location: location.href,
+    page_title: document.title,
+  })
+}
+
 export interface IslandHooks {
   /** Unmount every hydrated island. Runs BEFORE the body is replaced. */
   teardown: () => void
@@ -473,6 +493,7 @@ export async function navigate(
     region.focus({ preventScroll: true })
   }, transition)
 
+  if (seq === navSeq) trackPageView()
   release()
 }
 
