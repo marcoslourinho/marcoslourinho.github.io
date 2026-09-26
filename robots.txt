@@ -1,5 +1,5 @@
 User-Agent: *
 Allow: /
 
-Host: https://maxleiter.com
-Sitemap: https://maxleiter.com/sitemap.xml
+Host: https://marcoslourinho.com
+Sitemap: https://marcoslourinho.com/sitemap.xml

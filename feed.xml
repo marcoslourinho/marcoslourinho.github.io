@@ -2,10 +2,10 @@
     <channel>
         <title><![CDATA[Marcos Lourinho]]></title>
         <description><![CDATA[Marcos Lourinho's blog]]></description>
-        <link>https://maxleiter.com</link>
+        <link>https://marcoslourinho.com</link>
         <generator>RSS for Node</generator>
         <lastBuildDate>Sat, 26 Sep 2026 07:00:00 GMT</lastBuildDate>
-        <atom:link href="https://maxleiter.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <atom:link href="https://marcoslourinho.com/feed.xml" rel="self" type="application/rss+xml"/>
         <language><![CDATA[en]]></language>
         <item>
             <title><![CDATA[Hello World!]]></title>
@@ -23,8 +23,8 @@ algo valer a pena registrar. Se você chegou até aqui, seja bem-vindo(a).
 Espero que o que eu compartilhar por aqui também ajude você.</p>
 <p>Tamo junto!</p>
 <p>Marcos Lourinho.</p>]]></description>
-            <link>https://maxleiter.com/notes/hello-world</link>
-            <guid isPermaLink="false">https://maxleiter.com/notes/hello-world</guid>
+            <link>https://marcoslourinho.com/notes/hello-world</link>
+            <guid isPermaLink="false">https://marcoslourinho.com/notes/hello-world</guid>
             <category><![CDATA[note]]></category>
             <dc:creator><![CDATA[Marcos Lourinho]]></dc:creator>
             <pubDate>Sat, 26 Sep 2026 07:00:00 GMT</pubDate>
