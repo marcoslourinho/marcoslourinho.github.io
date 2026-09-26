@@ -253,9 +253,12 @@ function PostRow({
 
   const body = (
     <>
-      <h3 className="text-sm 3xl:text-base font-mono text-[var(--fg)] group-hover:text-[var(--gray)] transition-colors mb-1">
-        {post.title}
-      </h3>
+      <div className="flex items-center gap-2 mb-1">
+        <FileIcon className="w-4 h-4 text-[var(--gray)] flex-shrink-0 group-hover:text-[var(--fg)] transition-colors" />
+        <h3 className="text-sm 3xl:text-base font-mono text-[var(--fg)] group-hover:text-[var(--gray)] transition-colors">
+          {post.title}
+        </h3>
+      </div>
       <p className="text-xs 3xl:text-sm text-[var(--gray)]">
         {post.date}
         {external && <span className="ml-2 opacity-50">· external</span>}

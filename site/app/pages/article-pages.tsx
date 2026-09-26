@@ -93,32 +93,6 @@ function Article({
       <div className={PROSE_CLASS} style={PROSE_VARS}>
         {content}
       </div>
-
-      <footer
-        className="mt-8 pt-5 border-t text-sm"
-        style={{ borderColor: 'var(--border-color)', color: 'var(--gray)' }}
-      >
-        <p>
-          Thanks for reading! If you want to see future content, you can follow
-          me{' '}
-          <a
-            className="text-[var(--link)] hover:opacity-80 transition-opacity"
-            href="https://x.com/marcoslourinho"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            on X
-          </a>{' '}
-          or subscribe to my{' '}
-          <a
-            className="text-[var(--link)] hover:opacity-80 transition-opacity"
-            href="/feed.xml"
-          >
-            RSS feed
-          </a>
-          .
-        </p>
-      </footer>
     </article>
   )
 }
