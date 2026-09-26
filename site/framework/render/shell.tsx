@@ -1,0 +1,340 @@
+import { renderToStaticMarkup } from 'react-dom/server'
+import type { ReactElement } from 'react'
+import type { PageHead } from '../shared/types'
+
+/**
+ * The HTML shell. No metadata framework: a typed object and a function.
+ *
+ * Head tag order is grouped by purpose: document meta, then the title and
+ * description, then robots, then canonical and feed links, then the Open Graph
+ * and Twitter cards, then icons.
+ *
+ * The document is assembled as a string rather than one React tree so the body
+ * markup lands directly inside `<body>` with no wrapper element.
+ */
+
+const SITE_NAME = "Marcos Lourinho's website"
+const DEFAULT_TITLE = 'Marcos Lourinho'
+const OG_ALT = "Marcos Lourinho's site"
+
+/** The site card, relative to whichever site URL the build context carries. */
+const defaultOgImage = (siteUrl: string) => `${siteUrl}/opengraph-image.png`
+
+/**
+ * Runs before first paint and corrects the server-rendered `dark` to whatever
+ * the visitor actually wants. Replaces next-themes' injected script; there is
+ * no hydration to reconcile, which was the only hard part of that component.
+ *
+ * Also corrects `<meta name="theme-color">`, which ships dark like the rest of
+ * the document. The values must match `--bg` in global.css; the runtime's
+ * theme toggle writes the same pair.
+ */
+export const THEME_SCRIPT =
+  `try{var t=localStorage.theme||'system',d=document.documentElement,` +
+  `e=t=='system'?(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'):t;` +
+  `d.dataset.theme=e;d.style.colorScheme=e;` +
+  `var m=document.querySelector('meta[name=theme-color]');` +
+  `if(m)m.setAttribute('content',e=='light'?'#fff':'#000000')}catch(_){}`
+
+/**
+ * Same-document view transitions: the router's page swap and the desktop's
+ * window open/close. Reduced motion is honoured by the router, which skips
+ * `startViewTransition` entirely rather than animating at zero duration.
+ */
+export const VIEW_TRANSITION_CSS = `
+::view-transition-old(root),::view-transition-new(root){animation-duration:180ms}
+html.vt-local{view-transition-name:none}
+`.trim()
+
+export interface Fonts {
+  /** `@font-face` blocks plus the `--font-geist-*` custom properties. */
+  css: string
+  /** Absolute paths of woff2 files to preload. */
+  preload: string[]
+}
+
+/**
+ * A post's structured data. Emitted with `id="jsonld"` so the router can swap
+ * it, and with `<` escaped so post titles cannot close the script tag.
+ */
+function jsonLdScript(head: PageHead): string {
+  if (head.ogType !== 'article') return ''
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: head.title ?? DEFAULT_TITLE,
+    ...(head.description ? { description: head.description } : {}),
+    url: head.canonical,
+    ...(head.publishedTime ? { datePublished: head.publishedTime } : {}),
+    ...(head.ogImage ? { image: head.ogImage } : {}),
+    author: { '@type': 'Person', name: DEFAULT_TITLE },
+  }
+  const json = JSON.stringify(data).replace(/</g, '\\u003c')
+  return `<script type="application/ld+json" id="jsonld">${json}</script>`
+}
+
+export interface ShellOptions {
+  head: PageHead
+  body: string
+  /**
+   * Split so a same-document navigation can swap only what changed.
+   * `base` is identical on every page and the router never touches it;
+   * `page` is that route's conditional fragments and is all a swap replaces.
+   */
+  css: { base: string; page: string }
+  fonts: Fonts
+  /** Island name -> hashed module URL, for the runtime's lazy import. */
+  islands: Record<string, string>
+  /** `ctx.site.url`; the one place the shell learns the origin. */
+  siteUrl: string
+  /**
+   * The built runtime's source, inlined as a module so the first page needs no
+   * extra request before links become instant. About 1.1KB brotli, and that is
+   * the size budget: it rides in every document.
+   */
+  runtime: string
+  /**
+   * Chunk URLs the inlined runtime imports (the router), emitted as
+   * `<link rel="modulepreload">` so the fetch starts at head parse rather
+   * than after the body-end module runs. Full documents only: a partial's
+   * destination page already has the router.
+   */
+  runtimePreload?: string[]
+  /**
+   * The document is the `/embed` variant, loaded in a desktop window's iframe.
+   * Every link in it must navigate the top page, not the frame: a post that
+   * links another post would otherwise open it nested inside the window.
+   */
+  embed?: boolean
+  /**
+   * Hash of everything a partial does NOT carry: the runtime, the base sheet
+   * and the font CSS. The router compares the incoming document's value with
+   * the running page's and falls back to a hard navigation on a mismatch, so
+   * a partial from a newer deploy is never swapped under an older shell.
+   */
+  shellId: string
+}
+
+/**
+ * What a soft-navigation document carries: no fonts, no base sheet, no runtime,
+ * no analytics tag and no theme script, because the page being navigated from
+ * already has all five.
+ */
+export type PartialOptions = Pick<
+  ShellOptions,
+  'head' | 'body' | 'css' | 'islands' | 'siteUrl' | 'shellId'
+>
+
+function headTags(head: PageHead, siteUrl: string): ReactElement[] {
+  const title = head.title ? `${head.title} | ${DEFAULT_TITLE}` : DEFAULT_TITLE
+  // Empty means omit, not fall back. `posts/nintype.mdx` has a blank
+  // `description:` and Next drops all three tags rather than substituting the
+  // site default; the baseline records that.
+  const description = head.description
+  const defaultImage = defaultOgImage(siteUrl)
+  const ogImage = head.ogImage ?? defaultImage
+  const isDefaultImage = ogImage === defaultImage
+  const robots = head.noindex ? 'noindex, nofollow' : 'index, follow'
+
+  const tags: ReactElement[] = [
+    <meta charSet="utf-8" key="charset" />,
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+      key="viewport"
+    />,
+    <meta name="theme-color" content="#000000" key="theme-color" />,
+    <title key="title">{title}</title>,
+    ...(description
+      ? [<meta name="description" content={description} key="description" />]
+      : []),
+    <meta name="robots" content={robots} key="robots" />,
+    <meta name="googlebot" content={robots} key="googlebot" />,
+    <link rel="canonical" href={head.canonical} key="canonical" />,
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      href={`${siteUrl}/feed.xml`}
+      key="rss"
+    />,
+    // The page's own title and canonical, not the site's. The Next site
+    // shipped the constant site name and origin here, so every shared link
+    // rendered as "Max Leiter"; the parity migration preserved that bug and
+    // this is the deliberate fix.
+    <meta property="og:title" content={title} key="og:title" />,
+    ...(description
+      ? [
+          <meta
+            property="og:description"
+            content={description}
+            key="og:description"
+          />,
+        ]
+      : []),
+    <meta property="og:url" content={head.canonical} key="og:url" />,
+    <meta property="og:site_name" content={SITE_NAME} key="og:site_name" />,
+    <meta property="og:locale" content="en_US" key="og:locale" />,
+    <meta property="og:image" content={ogImage} key="og:image" />,
+    <meta property="og:image:type" content="image/png" key="og:image:type" />,
+    <meta property="og:image:width" content="1200" key="og:image:width" />,
+    <meta property="og:image:height" content="630" key="og:image:height" />,
+  ]
+
+  if (isDefaultImage) {
+    tags.push(
+      <meta property="og:image:alt" content={OG_ALT} key="og:image:alt" />,
+    )
+  }
+
+  tags.push(
+    <meta
+      property="og:type"
+      content={head.ogType ?? 'website'}
+      key="og:type"
+    />,
+  )
+
+  if (head.publishedTime) {
+    tags.push(
+      <meta
+        property="article:published_time"
+        content={head.publishedTime}
+        key="published"
+      />,
+    )
+  }
+
+  tags.push(
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+      key="twitter:card"
+    />,
+    <meta
+      name="twitter:creator"
+      content="@marcoslourinho"
+      key="twitter:creator"
+    />,
+    <meta name="twitter:title" content={title} key="twitter:title" />,
+    ...(description
+      ? [
+          <meta
+            name="twitter:description"
+            content={description}
+            key="twitter:description"
+          />,
+        ]
+      : []),
+    <meta name="twitter:image" content={ogImage} key="twitter:image" />,
+  )
+
+  if (isDefaultImage) {
+    tags.push(
+      <meta
+        name="twitter:image:alt"
+        content={OG_ALT}
+        key="twitter:image:alt"
+      />,
+    )
+  }
+
+  tags.push(
+    <meta name="twitter:image:width" content="1200" key="twitter:image:w" />,
+    <meta name="twitter:image:height" content="630" key="twitter:image:h" />,
+    <link
+      rel="shortcut icon"
+      href={`${siteUrl}/favicons/favicon.ico`}
+      key="shortcut"
+    />,
+    <link
+      rel="icon"
+      href="/favicon.ico"
+      sizes="48x48"
+      type="image/x-icon"
+      key="icon"
+    />,
+  )
+
+  return tags
+}
+
+function preloadTags(hrefs: string[]): ReactElement[] {
+  return hrefs.map((href) => (
+    <link
+      key={href}
+      rel="preload"
+      href={href}
+      as="font"
+      type="font/woff2"
+      crossOrigin=""
+    />
+  ))
+}
+
+function islandsScript(islands: Record<string, string>): string {
+  if (Object.keys(islands).length === 0) return ''
+  return `<script type="application/json" id="__islands">${JSON.stringify(
+    islands,
+  )}</script>`
+}
+
+export function renderShell(options: ShellOptions): string {
+  const { head, body, css, fonts, islands, siteUrl } = options
+
+  const headHtml = [
+    renderToStaticMarkup(<>{headTags(head, siteUrl)}</>),
+    `<meta name="shell-id" content="${options.shellId}">`,
+    jsonLdScript(head),
+    options.embed ? '<base target="_top">' : '',
+    renderToStaticMarkup(<>{preloadTags(fonts.preload)}</>),
+    (options.runtimePreload ?? [])
+      .map((href) => `<link rel="modulepreload" href="${href}">`)
+      .join(''),
+    // Two tags, not one. The base sheet, the fonts and the view-transition
+    // rules are byte-identical on every page, so a same-document navigation
+    // leaves `#css-base` alone and swaps only `#css-page`.
+    `<style id="css-base">${fonts.css}\n${css.base}\n${VIEW_TRANSITION_CSS}</style>`,
+    `<style id="css-page">${css.page}</style>`,
+    `<script>${THEME_SCRIPT}</script>`,
+  ].join('')
+
+  const scripts: string[] = [islandsScript(islands)]
+  const inlineRuntime = options.runtime.replace(/<\/script/gi, '<\\/script')
+  scripts.push(`<script type="module">${inlineRuntime}</script>`)
+  scripts.push('<script defer src="/_vercel/insights/script.js"></script>')
+
+  return (
+    '<!doctype html>' +
+    '<html lang="en" data-theme="dark" style="color-scheme:dark">' +
+    `<head>${headHtml}</head>` +
+    `<body>${body}${scripts.join('')}</body>` +
+    '</html>'
+  )
+}
+
+/**
+ * The same page with everything a soft navigation already has removed: no
+ * fonts, no base sheet, no runtime, no analytics tag, no theme script.
+ *
+ * The router fetches this instead of the full document, so a navigation
+ * transfers the body and that route's CSS fragments rather than re-sending the
+ * ~30KB of shell every page repeats. It is still a parseable HTML document, so
+ * `DOMParser` sorts the head tags from the body markup with no bespoke format
+ * to keep in sync -- and the head is rendered by the very same `headTags`, so
+ * the two can never disagree about a canonical or an og: tag.
+ */
+export function renderPartial(options: PartialOptions): string {
+  const { head, body, css, islands, siteUrl } = options
+  const headHtml = renderToStaticMarkup(<>{headTags(head, siteUrl)}</>)
+  return (
+    `<!doctype html><html><head>${headHtml}` +
+    `<meta name="shell-id" content="${options.shellId}">${jsonLdScript(head)}` +
+    `<style id="css-page">${css.page}</style></head>` +
+    `<body>${body}${islandsScript(islands)}</body></html>`
+  )
+}
+
+/** Renders a page component to markup, without the shell. */
+export function renderBody(element: ReactElement): string {
+  return renderToStaticMarkup(element)
+}

@@ -1,0 +1,69 @@
+name: Deploy site
+
+# Builds site/ and publishes the static output to the repo root, which is
+# what GitHub Pages serves (Pages is configured to serve branch "master",
+# path "/"). Runs on every push to master that touches the site source, and
+# can also be triggered manually.
+on:
+  push:
+    branches: [master]
+    paths:
+      - "site/**"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-master
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: site/pnpm-lock.yaml
+
+      - name: Install dependencies
+        working-directory: site
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        working-directory: site
+        run: pnpm build
+
+      # site/build.ts writes the static output in Vercel's "Build Output API"
+      # shape (site/.vercel/output/static). That directory is the actual
+      # deployable site; we copy its contents to the repo root and leave
+      # site/, legacy-site/ and the repo docs untouched.
+      - name: Publish build output to repo root
+        run: |
+          set -euo pipefail
+          shopt -s extglob dotglob
+          rm -rf -- !(site|legacy-site|.git|.github|README.md|.gitignore|.nojekyll)
+          cp -a site/.vercel/output/static/. .
+          touch .nojekyll
+
+      - name: Commit and push
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed, skipping deploy commit."
+            exit 0
+          fi
+          git commit -m "chore: deploy site build [skip ci]"
+          git push
