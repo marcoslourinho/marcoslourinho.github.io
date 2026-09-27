@@ -232,7 +232,7 @@ function WidgetProfile({ handlers }: { handlers: ChromeHandlers }) {
         </div>
       </div>
       <p className="px-4 3xl:px-5 py-4 3xl:py-5 text-xs 3xl:text-sm font-mono text-[var(--gray)] leading-relaxed">
-        Eu compartilho por aqui o que acontece além do código: experimentos,
+        Compartilho por aqui o que acontece além do código: experimentos,
         desafios de gestão, conteúdos, decisões e os bastidores de quem constrói
         negócios, produtos de software e times de engenharia.
       </p>
