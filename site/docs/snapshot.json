@@ -30,9 +30,9 @@
       "canonical": "https://marcoslourinho.com/about",
       "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
-      "textHash": "f23a5407ee5b71d1",
+      "textHash": "1311838d01e883dd",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 14362
+      "partialBytes": 14360
     },
     {
       "path": "/about/embed",
@@ -41,9 +41,9 @@
       "canonical": "https://marcoslourinho.com/about",
       "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": true,
-      "textHash": "21d39db9929b4939",
+      "textHash": "99026600447f75df",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 11221
+      "partialBytes": 11219
     },
     {
       "path": "/blogs",
