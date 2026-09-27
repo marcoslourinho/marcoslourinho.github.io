@@ -1,16 +1,16 @@
-const LINK = 'text-[var(--link)] hover:opacity-80 underline transition-opacity'
+const LINK = "text-[var(--link)] hover:opacity-80 underline transition-opacity";
 
 function ExtLink({ href, children }: { href: string; children: string }) {
   return (
     <a className={LINK} href={href} target="_blank" rel="noopener noreferrer">
       {children}
     </a>
-  )
+  );
 }
 
-const HEADING = 'text-xl font-mono font-bold mb-3 text-[var(--fg)]'
-const KICKER = 'mb-4 italic'
-const P = 'mb-4'
+const HEADING = "text-xl font-mono font-bold mb-3 text-[var(--fg)]";
+const KICKER = "mb-4 italic";
+const P = "mb-4";
 
 export function AboutContent() {
   return (
@@ -21,11 +21,9 @@ export function AboutContent() {
 
       <div className="space-y-6 text-[var(--gray)] leading-relaxed">
         <section>
-          <h2 className={HEADING}>Marcos Lourinho</h2>
-
           <p className="mt-4">
             Há mais de uma década, eu navego entre códigos, projetos, problemas
-            e times de tecnologia. Minha obsessão sempre esteve em{' '}
+            e times de tecnologia. Minha obsessão sempre esteve em{" "}
             <strong className="text-[var(--fg)]">
               construir soluções, processos e equipes capazes de mover negócios.
             </strong>
@@ -44,9 +42,9 @@ export function AboutContent() {
             Computação em 2015. Mas minha história com programação começou bem
             antes, em 2009. Comecei gastando horas hospedando scripts nos
             antigos blogspots (Blogger). Mesmo sem entender direito, eu já
-            brincava com <code className="font-mono">HTML4</code>,{' '}
-            <code className="font-mono">XHTML</code>,{' '}
-            <code className="font-mono">CSS2</code> e{' '}
+            brincava com <code className="font-mono">HTML4</code>,{" "}
+            <code className="font-mono">XHTML</code>,{" "}
+            <code className="font-mono">CSS2</code> e{" "}
             <code className="font-mono">jQuery</code> (sim, antes mesmo de
             aprender JavaScript, quem nunca?).
           </p>
@@ -55,7 +53,7 @@ export function AboutContent() {
             Com o tempo, descobri que gostava tanto de construir coisas que
             embarquei no universo de criação de games com RPG Maker, criando
             mapas em pixel art, personagens em 2D e batalhas por turnos usando
-            programação básica com <code className="font-mono">Ruby/RGSS</code>{' '}
+            programação básica com <code className="font-mono">Ruby/RGSS</code>{" "}
             (eu gostaria de dizer que foi legal, mas não. Detesto Ruby até
             hoje).
           </p>
@@ -66,8 +64,8 @@ export function AboutContent() {
             genéticos, busca combinatória e até pela aventura maluca de
             construir um compilador para o COBOL no sexto período (se você
             estava lá comigo, sabe muito bem do que estou falando). Mas, na
-            real, foi a{' '}
-            <strong className="text-[var(--fg)]">Engenharia de Software</strong>{' '}
+            real, foi a{" "}
+            <strong className="text-[var(--fg)]">Engenharia de Software</strong>{" "}
             que me inspirou a seguir a carreira que tenho hoje. O estudo de
             processos, artefatos, UML, design patterns, arquitetura e a nobre
             arte de <em>"construir e entregar"</em> projetos nasceu ali.
@@ -102,10 +100,10 @@ export function AboutContent() {
           </p>
 
           <p className={P}>
-            Hoje, carrego histórias que, como diria Theodore Roosevelt, só quem{' '}
+            Hoje, carrego histórias que, como diria Theodore Roosevelt, só quem{" "}
             <em className="text-[var(--fg)]">"esteve na arena"</em> pode contar.
             Porque é lá, entre a poeira, o suor e as cicatrizes, que a gente
-            descobre o verdadeiro valor de{' '}
+            descobre o verdadeiro valor de{" "}
             <strong className="text-[var(--fg)]">
               tentar, errar, aprender e continuar construindo.
             </strong>
@@ -122,10 +120,10 @@ export function AboutContent() {
           <p className={P}>
             Depois que fiz a transição de programador para gestor, passei a
             dedicar boa parte do meu tempo à montar times de tecnologia. Quando
-            entendi de verdade o conceito de{' '}
+            entendi de verdade o conceito de{" "}
             <em className="text-[var(--fg)]">leverage</em>, descobri o poder de
             multiplicar minha capacidade de execução por meio de equipes
-            formadas por pessoas tão obcecadas quanto eu em{' '}
+            formadas por pessoas tão obcecadas quanto eu em{" "}
             <strong className="text-[var(--fg)]">
               construir, resolver problemas e fazer as coisas acontecerem.
             </strong>
@@ -142,17 +140,17 @@ export function AboutContent() {
           <p className={P}>
             Gosto de estar próximo dos desafios técnicos, debugar códigos,
             participar das decisões importantes e criar as condições para que os
-            times tenham{' '}
+            times tenham{" "}
             <strong className="text-[var(--fg)]">
               autonomia, clareza e capacidade de execução.
-            </strong>{' '}
+            </strong>{" "}
             Meu foco sempre vai estar em garantir que a engenharia avance na
             direção certa e que nossas entregas gerem valor real para os
             produtos e para o negócio.
           </p>
 
           <p className={P}>
-            Em 2024, me juntei à{' '}
+            Em 2024, me juntei à{" "}
             <ExtLink href="https://www.exitlag.com/">ExitLag</ExtLink>, para
             começar a escrever um novo capítulo dessa carreira: sustentando a
             operação de um produto global em uma indústria muito mais hardcore
@@ -163,10 +161,10 @@ export function AboutContent() {
 
           <p>
             No fim das contas, continuo investindo energia na mesma coisa que me
-            fez começar a programar lá em 2009:{' '}
+            fez começar a programar lá em 2009:{" "}
             <strong className="text-[var(--fg)]">
               resolver problemas e construir coisas.
-            </strong>{' '}
+            </strong>{" "}
             Só que agora os desafios são um pouco maiores e, claro, envolvem
             muito mais gente.
           </p>
@@ -199,7 +197,7 @@ export function AboutContent() {
 
           <p className={P}>
             No fundo, todos os meus hobbies alimentam algo que também me move no
-            trabalho:{' '}
+            trabalho:{" "}
             <strong className="text-[var(--fg)]">
               desenvolver a minha capacidade de pensar antes de agir e enxergar
               as coisas além do óbvio.
@@ -227,8 +225,10 @@ export function AboutContent() {
           </p>
 
           <p className={P}>Tamo junto!</p>
+
+          <p className={P}>- Marcos</p>
         </section>
       </div>
     </div>
-  )
+  );
 }
