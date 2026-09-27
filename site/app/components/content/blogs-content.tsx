@@ -75,9 +75,7 @@ function ArticleCard({ article }: { article: Article }) {
             <p className="text-sm text-[var(--gray)] mt-0.5">
               {article.author}
             </p>
-            <p className="text-sm text-[var(--gray)] mt-1 line-clamp-2">
-              {article.why}
-            </p>
+            <p className="text-sm text-[var(--gray)] mt-1">{article.why}</p>
           </div>
           <ExternalLinkIcon />
         </div>

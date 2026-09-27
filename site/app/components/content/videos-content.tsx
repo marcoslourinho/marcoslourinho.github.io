@@ -72,9 +72,7 @@ function VideoCard({ video }: { video: Video }) {
               {video.title}
             </h2>
             <p className="text-sm text-[var(--gray)] mt-0.5">{video.author}</p>
-            <p className="text-sm text-[var(--gray)] mt-1 line-clamp-2">
-              {video.why}
-            </p>
+            <p className="text-sm text-[var(--gray)] mt-1">{video.why}</p>
           </div>
           <ExternalLinkIcon />
         </div>

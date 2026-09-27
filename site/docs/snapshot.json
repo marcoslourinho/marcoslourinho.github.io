@@ -10,7 +10,7 @@
       "noindex": false,
       "textHash": "93b89f05a5e66e47",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 43201
+      "partialBytes": 43245
     },
     {
       "path": "/404",
@@ -30,9 +30,9 @@
       "canonical": "https://marcoslourinho.com/about",
       "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": false,
-      "textHash": "1311838d01e883dd",
+      "textHash": "6c5a567cfa2f9acf",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 14360
+      "partialBytes": 14306
     },
     {
       "path": "/about/embed",
@@ -41,9 +41,9 @@
       "canonical": "https://marcoslourinho.com/about",
       "ogImage": "https://marcoslourinho.com/opengraph-image.png",
       "noindex": true,
-      "textHash": "99026600447f75df",
+      "textHash": "47d6c6ffc8a0a431",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 11219
+      "partialBytes": 11165
     },
     {
       "path": "/blogs",
@@ -54,7 +54,7 @@
       "noindex": false,
       "textHash": "09e9435e14dc6e9f",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 14801
+      "partialBytes": 14736
     },
     {
       "path": "/blogs/embed",
@@ -65,7 +65,7 @@
       "noindex": true,
       "textHash": "1d4715206f3198ac",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 11660
+      "partialBytes": 11595
     },
     {
       "path": "/books",
@@ -76,7 +76,7 @@
       "noindex": false,
       "textHash": "d1e7d4da9b6b6c19",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 21657
+      "partialBytes": 21540
     },
     {
       "path": "/books/embed",
@@ -87,7 +87,7 @@
       "noindex": true,
       "textHash": "e1449ea89343bd33",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 18516
+      "partialBytes": 18399
     },
     {
       "path": "/notes",
@@ -164,7 +164,7 @@
       "noindex": false,
       "textHash": "c80580021692cd32",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 14183
+      "partialBytes": 14118
     },
     {
       "path": "/videos/embed",
@@ -175,7 +175,7 @@
       "noindex": true,
       "textHash": "37171d84dcb933a6",
       "codeHash": "e3b0c44298fc1c14",
-      "partialBytes": 11039
+      "partialBytes": 10974
     }
   ]
 }

@@ -345,10 +345,14 @@ export function Window({
           className={getHeaderClassName(isFullscreen)}
           style={headerStyle}
         >
-          <h3 id={titleId} className={windowStyles.title}>
+          <h3
+            id={titleId}
+            className={`${windowStyles.title} min-w-0 truncate`}
+            title={title}
+          >
             {title}
           </h3>
-          <div className="flex items-center gap-1">
+          <div className="flex shrink-0 items-center gap-1">
             {maximizeTarget ? (
               <a
                 href={maximizeTarget}
@@ -380,7 +384,7 @@ export function Window({
           </div>
         </header>
 
-        <div className="flex-1 overflow-hidden">{children}</div>
+        <div className="min-h-0 min-w-0 flex-1 overflow-hidden">{children}</div>
 
         {!isFullscreen && (
           <div

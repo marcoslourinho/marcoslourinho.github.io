@@ -1,6 +1,8 @@
 article {
   margin: 0 auto;
   line-height: 1.7;
+  /* Resizable windows can be narrower than a long word or identifier. */
+  overflow-wrap: anywhere;
 }
 
 article p {
@@ -163,6 +165,7 @@ article *:not(pre) > code::after {
 
 article pre {
   overflow-x: auto;
+  overflow-wrap: normal;
   background: var(--lightest-gray);
   border-radius: var(--inline-radius);
   line-height: 1.8;

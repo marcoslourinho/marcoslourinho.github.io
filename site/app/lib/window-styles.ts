@@ -4,7 +4,7 @@ export const windowStyles = {
     backdropFilter: 'blur(12px)',
   },
   header:
-    'h-8 border-b border-[var(--border-color)] flex items-center justify-between px-3 rounded-t-lg select-none',
+    'h-8 shrink-0 border-b border-[var(--border-color)] flex items-center justify-between gap-3 px-3 rounded-t-lg select-none',
   toolbar:
     'h-10 border-b border-[var(--border-color)] flex items-center justify-between px-4 select-none sticky top-0 z-10',
   button:

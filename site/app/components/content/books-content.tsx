@@ -117,9 +117,7 @@ function BookCard({ book }: { book: Book }) {
               {book.title}
             </h2>
             <p className="text-sm text-[var(--gray)] mt-0.5">{book.author}</p>
-            <p className="text-sm text-[var(--gray)] mt-1 line-clamp-2">
-              {book.why}
-            </p>
+            <p className="text-sm text-[var(--gray)] mt-1">{book.why}</p>
           </div>
           <ExternalLinkIcon />
         </div>
