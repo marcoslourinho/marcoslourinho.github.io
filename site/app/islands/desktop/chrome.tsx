@@ -215,7 +215,10 @@ function WidgetProfile({ handlers }: { handlers: ChromeHandlers }) {
           </h2>
           <div className="mt-1 font-mono text-[var(--gray)]">
             <div className="text-sm 3xl:text-base">
-              Head of Engineering at{' '}
+              Head of Engineering.
+            </div>
+            <div className="text-sm 3xl:text-base">
+              Building Systems at{' '}
               <a
                 href="https://exitlag.com"
                 target="_blank"
@@ -223,10 +226,10 @@ function WidgetProfile({ handlers }: { handlers: ChromeHandlers }) {
                 className="text-[var(--fg)] hover:text-[var(--gray)] transition-colors"
               >
                 @exitlag
-              </a>
+              </a>.
             </div>
             <div className="mt-2 text-xs 3xl:text-sm">
-              Hosted in <span className="text-[var(--fg)]">São Paulo, SP.</span>
+              Hosted in <span className="text-[var(--fg)]">Sao Paulo, SP.</span>
             </div>
           </div>
         </div>
