@@ -1,0 +1,1 @@
+var r={blog:"blog-post-",note:"note-",page:"page-"};function i(t,n){return`${r[t]}${n}`}function s(t){let n=/\/(blog|notes)\/([^/?#]+)/.exec(t);if(!n)return null;let[,e,o]=n;return i(e==="notes"?"note":"blog",o)}function l(t){for(let n of document.querySelectorAll("[style]"))if(n.style.viewTransitionName===t)return!0;return!1}export{i as a,s as b,l as c};

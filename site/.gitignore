@@ -1,0 +1,27 @@
+.DS_Store
+node_modules
+/public/feed.xml
+dist/
+packages/
+yalc.lock
+.yalc
+.env*
+.env*.local
+
+# build output (Vercel Build Output API) and build cache
+.vercel
+.cache/
+tsconfig.tsbuildinfo
+
+# parity harness
+.snapshots
+
+# Supabase
+.supabase
+**/supabase/.branches
+**/supabase/.temp
+
+.vscode
+.opencode
+.claude/*
+!.claude/skills/

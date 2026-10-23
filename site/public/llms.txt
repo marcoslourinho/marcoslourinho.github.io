@@ -1,0 +1,25 @@
+# Marcos Lourinho
+
+> Head of Engineering na Exitlag, com mais de uma década liderando 
+> produtos e times de engenharia de software. Este site reúne notas e conteúdos sobre
+> engenharia, liderança e gestão de times de tecnologia.
+
+## Sobre
+
+- [Sobre mim](https://marcoslourinho.com/about): trajetória profissional
+  completa.
+
+## Conteúdo
+
+- [Engineering Notes](https://marcoslourinho.com/notes): notas curtas sobre
+  engenharia, ferramentas e decisões de gestão.
+- [Blogs recomendados](https://marcoslourinho.com/blogs): artigos externos
+  sobre produto, liderança e engenharia.
+- [Livros recomendados](https://marcoslourinho.com/books): livros que
+  moldaram a forma de pensar sobre gestão e engenharia.
+
+## Redes
+
+- [LinkedIn](https://www.linkedin.com/in/marcoslourinho/)
+- [GitHub](https://github.com/marcoslourinho)
+- [X (Twitter)](https://x.com/marcoslourinho)

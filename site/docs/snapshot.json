@@ -1,0 +1,181 @@
+{
+  "themeScript": "b8fe63679f58bff0",
+  "routes": [
+    {
+      "path": "/",
+      "title": "Marcos Lourinho",
+      "description": "Marcos Lourinho — Head of Engineering na Exitlag. Notas sobre engenharia de software, liderança e gestão de times de tecnologia.",
+      "canonical": "https://marcoslourinho.com",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": false,
+      "textHash": "93b89f05a5e66e47",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 43245
+    },
+    {
+      "path": "/404",
+      "title": "404 | Marcos Lourinho",
+      "description": "Page not found.",
+      "canonical": "https://marcoslourinho.com/404",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": true,
+      "textHash": "4f3a5bee42efffab",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 6066
+    },
+    {
+      "path": "/about",
+      "title": "About | Marcos Lourinho",
+      "description": "A trajetória de Marcos Lourinho: mais de uma década liderando pessoas, produtos e times de engenharia de software. Pega um café, porque aqui você vai ler a versão longa da história.",
+      "canonical": "https://marcoslourinho.com/about",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": false,
+      "textHash": "6c5a567cfa2f9acf",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 14306
+    },
+    {
+      "path": "/about/embed",
+      "title": "About | Marcos Lourinho",
+      "description": "A trajetória de Marcos Lourinho: mais de uma década liderando pessoas, produtos e times de engenharia de software. Pega um café, porque aqui você vai ler a versão longa da história.",
+      "canonical": "https://marcoslourinho.com/about",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": true,
+      "textHash": "47d6c6ffc8a0a431",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 11165
+    },
+    {
+      "path": "/blogs",
+      "title": "Blogs | Marcos Lourinho",
+      "description": "Artigos que eu tenho certeza que vão te ajudar a ser melhor.",
+      "canonical": "https://marcoslourinho.com/blogs",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": false,
+      "textHash": "09e9435e14dc6e9f",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 14736
+    },
+    {
+      "path": "/blogs/embed",
+      "title": "Blogs | Marcos Lourinho",
+      "description": "Artigos que eu tenho certeza que vão te ajudar a ser melhor.",
+      "canonical": "https://marcoslourinho.com/blogs",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": true,
+      "textHash": "1d4715206f3198ac",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 11595
+    },
+    {
+      "path": "/books",
+      "title": "Books | Marcos Lourinho",
+      "description": "Livros que me ensinaram muito e precisam ser recomendados",
+      "canonical": "https://marcoslourinho.com/books",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": false,
+      "textHash": "d1e7d4da9b6b6c19",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 21540
+    },
+    {
+      "path": "/books/embed",
+      "title": "Books | Marcos Lourinho",
+      "description": "Livros que me ensinaram muito e precisam ser recomendados",
+      "canonical": "https://marcoslourinho.com/books",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": true,
+      "textHash": "e1449ea89343bd33",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 18399
+    },
+    {
+      "path": "/notes",
+      "title": "Notes | Marcos Lourinho",
+      "description": "Short-form thoughts, code snippets, and tips.",
+      "canonical": "https://marcoslourinho.com/notes",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": false,
+      "textHash": "b516c86be01de6cb",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 7055
+    },
+    {
+      "path": "/notes/embed",
+      "title": "Notes | Marcos Lourinho",
+      "description": "Short-form thoughts, code snippets, and tips.",
+      "canonical": "https://marcoslourinho.com/notes",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": true,
+      "textHash": "2e173216755102a0",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 3914
+    },
+    {
+      "path": "/notes/hello-world",
+      "title": "Hello World! | Marcos Lourinho",
+      "description": "Short-form thoughts, code snippets, and tips.",
+      "canonical": "https://marcoslourinho.com/notes/hello-world",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": false,
+      "textHash": "1b78faa60f94210c",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 9059
+    },
+    {
+      "path": "/notes/hello-world/embed",
+      "title": "Hello World! | Marcos Lourinho",
+      "description": "Short-form thoughts, code snippets, and tips.",
+      "canonical": "https://marcoslourinho.com/notes/hello-world",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": true,
+      "textHash": "37f99be13552c604",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 5359
+    },
+    {
+      "path": "/projects",
+      "title": "Projects | Marcos Lourinho",
+      "description": "Em breve...",
+      "canonical": "https://marcoslourinho.com/projects",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": false,
+      "textHash": "dcc16ce19508ef6e",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 6130
+    },
+    {
+      "path": "/projects/embed",
+      "title": "Projects | Marcos Lourinho",
+      "description": "Em breve...",
+      "canonical": "https://marcoslourinho.com/projects",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": true,
+      "textHash": "ff437aa9848e5b76",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 2980
+    },
+    {
+      "path": "/videos",
+      "title": "Videos | Marcos Lourinho",
+      "description": "Vídeos que me ensinaram muito e precisam ser recomendados",
+      "canonical": "https://marcoslourinho.com/videos",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": false,
+      "textHash": "c80580021692cd32",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 14118
+    },
+    {
+      "path": "/videos/embed",
+      "title": "Videos | Marcos Lourinho",
+      "description": "Vídeos que me ensinaram muito e precisam ser recomendados",
+      "canonical": "https://marcoslourinho.com/videos",
+      "ogImage": "https://marcoslourinho.com/opengraph-image.png",
+      "noindex": true,
+      "textHash": "37171d84dcb933a6",
+      "codeHash": "e3b0c44298fc1c14",
+      "partialBytes": 10974
+    }
+  ]
+}
